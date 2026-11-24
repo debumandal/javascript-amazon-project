@@ -40,7 +40,7 @@ products.forEach((product) => {
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-add-display-${product.id}">
             <img src="images/icons/checkmark.png" />
             Added
           </div>
@@ -58,6 +58,10 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     const quantity = Number(
       document.querySelector(`.js-quantity-selector-${productId}`).value,
     );
+
+    const addMessage = document.querySelector(`.js-add-display-${productId}`);
+
+    addMessage.classList.add("is-visible");
 
     let matchingItems;
 
